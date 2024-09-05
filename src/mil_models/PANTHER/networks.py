@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from utils.file_utils import load_pkl
+from src.utils.file_utils import load_pkl
 
 def mog_eval(mog, data):
     """

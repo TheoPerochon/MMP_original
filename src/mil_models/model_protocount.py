@@ -5,7 +5,7 @@ import numpy as np
 import pdb
 
 from .components import predict_surv, predict_clf, predict_emb
-from utils.file_utils import save_pkl, load_pkl
+from src.utils.file_utils import save_pkl, load_pkl
 
 class ProtoCount(nn.Module):
     """

@@ -4,8 +4,9 @@ from torch import einsum
 from tqdm import tqdm
 from einops import rearrange, reduce
 
-from utils.losses import NLLSurvLoss, CoxLoss, SurvRankingLoss
 from sksurv.util import Surv
+from src.utils.losses import NLLSurvLoss, CoxLoss, SurvRankingLoss
+
 
 def create_mlp(in_dim=None, hid_dims=[], act=nn.ReLU(), dropout=0.,
                out_dim=None, end_with_fc=True, bias=True):

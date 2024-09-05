@@ -9,7 +9,7 @@ from mil_models.model_multimodal import coattn, SurvPath, coattn_mot
 
 import pdb
 import torch
-from utils.file_utils import save_pkl, load_pkl
+from src.utils.file_utils import save_pkl, load_pkl
 from os.path import join as j_
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

@@ -107,6 +107,31 @@ def get_panther_encoder(in_dim, p, proto_path, config_dir='../'):
     model.eval()
     return model
 
+def get_panther_encoder_adapted_mmintegration(in_dim, p, proto_path, config_dir='../'):
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--model_histo_type', type=str, default='PANTHER')
+    parser.add_argument('--proto_model_type', type=str, default='PANTHER')
+    parser.add_argument('--model_histo_config', type=str, default='PANTHER_default')
+    parser.add_argument('--in_dim', type=int, default=in_dim)
+    parser.add_argument('--embed_dim', type=int, default=64)
+    parser.add_argument('--n_proto', type=int, default=p)
+    parser.add_argument('--n_classes', type=str, default=2)
+    parser.add_argument('--out_size', type=int, default=p)
+    parser.add_argument('--em_iter', type=int, default=1)
+    parser.add_argument('--tau', type=float, default=1)
+    parser.add_argument('--out_type', type=str, default='allcat')
+    parser.add_argument('--n_fc_layers', type=int, default=0)
+    parser.add_argument('--load_proto', type=int, default=1)
+    parser.add_argument('--ot_eps', type=int, default=1)
+    args = parser.parse_known_args()[0]
+    args.fix_proto = 1
+    args.proto_path = proto_path
+
+    model = create_embedding_model(args, mode = "emb",config_dir=config_dir)
+    model.eval()
+    return model
+
+
 def visualize_categorical_heatmap(
         wsi,
         coords, 

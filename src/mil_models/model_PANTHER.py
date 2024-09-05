@@ -5,7 +5,7 @@ import numpy as np
 
 from .components import predict_surv, predict_clf, predict_emb
 from .PANTHER.layers import PANTHERBase
-from utils.proto_utils import check_prototypes
+from src.utils.proto_utils import check_prototypes
 
 
 class PANTHER(nn.Module):

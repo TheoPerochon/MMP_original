@@ -4,7 +4,7 @@ All the functions related to clustering and slide embedding construction
 
 import pdb
 import os
-from utils.file_utils import save_pkl, load_pkl
+from src.utils.file_utils import save_pkl, load_pkl
 import numpy as np
 import time
 from sklearn.cluster import KMeans
